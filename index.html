@@ -30,10 +30,10 @@
                 <br>
                 <br>
                 <div id="avatarimages">
-                    <img id="bulba" src="./assets/images/bulbasaur.jpg" class="fighter_pic" width="250">
-                    <img id="char" src="./assets/images/charmander.jpg" class="fighter_pic" width="250">
-                    <img id="dratini" src="./assets/images/dratini.jpg" class="fighter_pic" width="250">
-                    <img id="vapo" src="./assets/images/vaporeon.jpg" class="fighter_pic" width="250">
+                    <img id="bulba" src="./assets/images/bulbasaur.jpg" class="avatar_pic" width="250">
+                    <img id="char" src="./assets/images/charmander.jpg" class="avatar_pic" width="250">
+                    <img id="dratini" src="./assets/images/dratini.jpg" class="avatar_pic" width="250">
+                    <img id="vapo" src="./assets/images/vaporeon.jpg" class="avatar_pic" width="250">
                 </div>
 
             </div>
@@ -48,7 +48,7 @@
                     <a href="#" id="attackButton" class="btn btn-primary">PLAY</a>
                     <br>
                     <br>
-                    <div id="avatarimages">
+                    <div id="fighterimages">
                         <img id="bulba" src="./assets/images/bulbasaur.jpg" class="fighter_pic" width="250">
                         <img id="char" src="./assets/images/charmander.jpg" class="fighter_pic" width="250">
                         <img id="dratini" src="./assets/images/dratini.jpg" class="fighter_pic" width="250">
@@ -57,8 +57,6 @@
     
                 </div>
             </div>
-
-
     </div>
 </body>
 
@@ -68,16 +66,23 @@
 
     $(document).ready(function () {
         //Essential gameplay:
+restartgame();
+playgame();
+
+
 
         //Functions to be used:
 
+        function restartgame() {
+            $(".fighter_pic").css("visibility: hidden");
+        };
+
         function playgame() {
             $("#playbutton").on("click", function () {
-                ("#bulba").css("visibility: hidden");
+                (".avatar_pic").css("visibility: hidden");
             });
         };
 
-playgame();
 
 
 
