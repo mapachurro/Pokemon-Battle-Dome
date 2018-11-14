@@ -3,181 +3,128 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>BATTLE FOR THE</title>
+    <title>CLEVELAND POKEMON GYM</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap File -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-
-
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
 
 </head>
 
 <body>
-
     <!-- Overall Bootstrap Grid -->
     <div class="container">
 
-        <!-- Jumbotron with Title -->
-        <div class="jumbotron">
-            <h1 class="text-center">
-                <strong>BATTLE FOR THE FORCE</strong>
-            </h1>
-            <hr>
-            <div id="musicControls" class="text-center">
-                <button class="btn btn-warning btn-xs theme-button">
-                        <iframe seamless="seamless" style="width: 100%; border: none; display: block; max-width: 595px; height: 460px;" src="https://getyarn.io/yarn-clip/embed/eced8bc9-40cd-44ac-bd31-fb081020118f?autoplay=false"> 
-                        </iframe>
-                    <span></span>CLICK HERE TO BEGIN THE BATTLE</button>
+        <div class="card">
+            <div class="card-header">
+                <h1>POKEMON BATTLEDOME</h1>
             </div>
+            <div class="card-body">
+                <h5 class="card-title">It's time for a Pokemon battle!</h5>
+                <p class="card-text">Gameplay is as follows: Choose your fighter; you'll then hit the 'attack' button
+                    as many times as you need to defeat your opponent. When that opponent is defeated, choose your next
+                    opponent.
+                </p>
+                <a href="#" id="playbutton" class="btn btn-primary">PLAY</a>
+                <br>
+                <br>
+                <div id="avatarimages">
+                    <img id="bulba" src="./assets/images/bulbasaur.jpg" class="fighter_pic" width="250">
+                    <img id="char" src="./assets/images/charmander.jpg" class="fighter_pic" width="250">
+                    <img id="dratini" src="./assets/images/dratini.jpg" class="fighter_pic" width="250">
+                    <img id="vapo" src="./assets/images/vaporeon.jpg" class="fighter_pic" width="250">
+                </div>
 
+            </div>
         </div>
 
-<div class="col-lg-12">
-        <div class="row">
-
-                <div id="fighterbox" class="card" class="col-lg-6">
-                    <h4 class="card-header">CHOOSE YOUR FIGHTER - CHOOSE YOUR OPPONENT</h4>
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div id="attack_button" class="text-center">
-                                    <div class="text-center">
-                            </div>
-                        </div>
-                        <img id="Poe" src="./assets/images/poe.jpg" class= "fighter_pic" width="250">
-                        <img id="Rey" src="./assets/images/rey.jpg" class= "fighter_pic" width="250">
-                        <img id="Kylo_Ren" src="./assets/images/kylo_ren.jpg" class= "fighter_pic" width="250">
-                        <img id="Darth_Maul" src="./assets/images/Darth_Maul.jpg" class= "fighter_pic" width="250">
-                    </div>
+        <div class="card">
+                <div class="card-header">
+                    <h1>BATTLEZONE</h1>
                 </div>
-            </div>
-
-                <div id="fightbox" class="card" class="col-lg-6">
-                    <h4 class="card-header">FIGHT!!~!!</h4>
                 <div class="card-body">
-                    <div class="text-center">
-                        <div id="attack_button" class="text-center">
-                            <div class="text-center">
-                                    <button class="btn btn-warning btn-xs theme-button">
-                                        <span></span>ATTACK</button>
+                    </p>
+                    <a href="#" id="attackButton" class="btn btn-primary">PLAY</a>
+                    <br>
+                    <br>
+                    <div id="avatarimages">
+                        <img id="bulba" src="./assets/images/bulbasaur.jpg" class="fighter_pic" width="250">
+                        <img id="char" src="./assets/images/charmander.jpg" class="fighter_pic" width="250">
+                        <img id="dratini" src="./assets/images/dratini.jpg" class="fighter_pic" width="250">
+                        <img id="vapo" src="./assets/images/vaporeon.jpg" class="fighter_pic" width="250">
                     </div>
+    
                 </div>
             </div>
-        </div>
-</div>
 
-</div>  
 
+    </div>
 </body>
+
 </html>
 
 <script>
 
-$(document).ready(function() {
+    $(document).ready(function () {
+        //Essential gameplay:
 
-    $(".fighter_pic").on("click", function() {
-        $(this).css('border', "solid 3px red");
-});
+        //Functions to be used:
+
+        function playgame() {
+            $("#playbutton").on("click", function () {
+                ("#bulba").css("visibility: hidden");
+            });
+        };
+
+playgame();
 
 
-var Poe = {
-    health_points: "",
-    attack_power: "",
-    counter_attack: "",
-    base_attack: "",
-    attacker: "",
-    defender: "",
-};
 
-var Rey = {
-    health_points: "",
-    attack_power: "",
-    counter_attack: "",
-    base_attack: "",
-    attacker: "",
-    defender: "",
-};
+        //Variables to be used:
+        var bulba = {
+            health_points: "",
+            attack_power: "",
+            counter_attack: "",
+            base_attack: "",
+            attacker: "",
+            defender: "",
+        };
 
-var Kylo_Ren = {
-    health_points: "",
-    attack_power: "",
-    counter_attack: "",
-    base_attack: "",
-    attacker: "",
-    defender: "",
-};
+        var char = {
+            health_points: "",
+            attack_power: "",
+            counter_attack: "",
+            base_attack: "",
+            attacker: "",
+            defender: "",
+        };
 
-var Darth_Maul = {
-    health_points: "",
-    attack_power: "",
-    counter_attack: "",
-    base_attack: "",
-    attacker: "",
-    defender: "",
-};
+        var dratini = {
+            health_points: "",
+            attack_power: "",
+            counter_attack: "",
+            base_attack: "",
+            attacker: "",
+            defender: "",
+        };
 
-var poeImg = $("Poe");
-var reyImg = $("Rey");
-var kyloImg = $("Kylo_Ren");
-var darthImg = $("Darth_Maul");
+        var vapo = {
+            health_points: "",
+            attack_power: "",
+            counter_attack: "",
+            base_attack: "",
+            attacker: "",
+            defender: "",
+        };
 
-});
+        var bulbaImg = $("bulba");
+        var charImg = $("char");
+        var dratiniImg = $("dratini");
+        var vapoImg = $("vapo");
+        var enemy;
+        var fighter;
+        var attackBtn = $("attackButton")
 
-//  Here's how the app works:
-
-// There are four attackers: Poe and Ray, Kylo Ren and Darth Maul.
-// When the game starts, the player will choose a character by clicking on the attacker's picture.
-// (There will be four photos which, I guess, will be objects, or at least pictures being manipulated like in the Captain Planet exercise.) 
-// Each character in the game has 3 attributes: Health Points, Attack Power and Counter Attack Power. (This makes me think that they should be 
-// objects with attributes. In addition, the characters need a Base Attack Power attribute, which then gets increased as part of the attack loop, 
-// using a for loop in a function defined elsewhere. The Health Points, Attack Power and Counter Attack Power of each character must differ.)
-// Your players should be able to win and lose the game no matter what character they choose. The challenge should come from picking the right enemies, not choosing the strongest player.
-
-// The player will fight as that character for the rest of the game.
-// (The picture will be outlined in green or whatevs and moved to the play space, and then this is reset at the end of the game)-->
-
-//                         <!--
-// The player must then defeat all of the remaining attackers. Enemies should be moved to a different area of the screen.
-// The player chooses an opponent by clicking on an enemy's picture.
-// Once the player selects an opponent, that enemy is moved to a defender area.
-// (Do the same thing as with the Resistance fighter re: color and positioning; move the rest of the Empire forces to the Bad Guy Corner)-->
-
-//                         <!--
-// The player will now be able to click the attack button.
-// (So there will be a big ole button that does the attacking)-->
-
+    });
 </script>
-
-
-
-
-                      <!--
-// Whenever the player clicks attack, their character damages the defender. The opponent will lose HP (health points). These points are displayed at the bottom of the defender's picture. 
-// The opponent character will instantly counter the attack. When that happens, the player's character will lose some of their HP. These points are shown at the bottom of the player character's picture.
-// (So, this is behavior programmed into the button pretty directly. on.click, a random amount of damage within a certain range will be subtracted from the defending character's hitpoints. NOTE there will
-// obviously need to be a hitpoint counter for each character. So in the same code block from the button, the action immediately following the attck is a counterattack; perhaps notify the player of the
-// enemy's counterattack and the damage done in an alert? Would probably be overkill... Also, the HP counter is both a number you see on the screen, as well as a value that gets stores in gameplay and 
-// manipulated [subtracted] by gameplay. Also, each time the player attacks, their character's Attack Power increases by its base Attack Power. This is included in the attack loop. 
-// Unlike the player's Attack Points, Counter Attack Power never changes )-->
-
-                     <!--
-// The player will keep hitting the attack button in an effort to defeat their opponent.
-
-// When the defender's HP is reduced to zero or below, remove the enemy from the defender area. 
-// (This is an interesting one. Should I hide them? Or move them off to the side?)-->
-
-                       <!--
-// The player character can now choose a new opponent.
-// (This scares me. This obviously has to loop back to the beginning, but saving the progress that's already been made against the prior character)-->
-
-                       <!--
-// The player wins the game by defeating all enemy characters. The player loses the game the game if their character's HP falls to zero or below.
-// (So. at the end of the button click behavior code block, there needs to be a call for the player's HP check, which is the loss condition, as well as the enemy's HP check, in order to prompt the 'next
-// opponent routine', and a win condition check, for when all enemies are defeated.)-->
-
-                      <!--
-// Option 2 Game design notes
-// A winning player must pick their characters wisely by first fighting an enemy with low Counter Attack Power. 
-// This will allow them to grind Attack Power and to take on enemies before they lose all of their Health Points. Healing options would mess with this dynamic.-->
