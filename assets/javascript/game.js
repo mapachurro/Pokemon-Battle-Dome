@@ -19,7 +19,7 @@ playGame();
         //This function is to initiate gameplay.
     function playGame() {
         $("#playbutton").click(function () {
-            (".avatar_pic").css("visibility: visible;");
+            $(".avatar_pic").css("visibility: visible;");
         });
     //When the user clicks on the first image, that'll be the user's avatar ("attacker").
     //When the user clicks on the second image, that'll be the first defender ("defender").
@@ -28,52 +28,52 @@ playGame();
         $("#bulba").click(function(bulba, char, dratini, vapo){
             if((attacker === 0 && defender === 0)){
                 (this).attacker = 1;
-                ("#bulba .avatar_pic").css("visibility: hidden;");
-                ("#bulba .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: green");
+                $("#bulba .avatar_pic").css("visibility: hidden;");
+                $("#bulba .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: green");
             }
             else{
                 (this).defender = 1;
-                ("#bulba .avatar_pic").css("visibility: hidden;");
-                ("#bulba .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: red");
+                $("#bulba .avatar_pic").css("visibility: hidden;");
+                $("#bulba .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: red");
             } 
         });
 
         $("#char").click(function(bulba, char, dratini, vapo){
             if((attacker === 0 && defender === 0)){
                 (this).attacker = 1;
-                ("#char .avatar_pic").css("visibility: hidden;");
-                ("#char .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: green");
+                $("#char .avatar_pic").css("visibility: hidden;");
+                $("#char .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: green");
             }
             else{
                 (this).defender = 1;
-                ("#char .avatar_pic").css("visibility: hidden;");
-                ("#char .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: red");
+                $("#char .avatar_pic").css("visibility: hidden;");
+                $("#char .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: red");
             }  
         });
 
         $("#dratini").click(function(bulba, char, dratini, vapo){
             if((attacker === 0 && defender === 0)){
                 (this).attacker = 1;
-                ("#dratini .avatar_pic").css("visibility: hidden;");
-                ("#dratini .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: green");
+                $("#dratini .avatar_pic").css("visibility: hidden;");
+                $("#dratini .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: green");
             }
             else{
                 (this).defender = 1;
-                ("#dratini .avatar_pic").css("visibility: hidden;");
-                ("#dratini .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: red");
+                $("#dratini .avatar_pic").css("visibility: hidden;");
+                $("#dratini .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: red");
             }  
         });
 
         $("#vapo").click(function(bulba, char, dratini, vapo){
             if((attacker === 0 && defender === 0)){
                 (this).attacker = 1;
-                ("#vapo .avatar_pic").css("visibility: hidden;");
-                ("#vapo .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: green");
+                $("#vapo .avatar_pic").css("visibility: hidden;");
+                $("#vapo .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: green");
             }
             else{
                 (this).defender = 1;
-                ("#vapo .avatar_pic").css("visibility: hidden;");
-                ("#vapo .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: red");
+                $("#vapo .avatar_pic").css("visibility: hidden;");
+                $("#vapo .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: red");
             }
         });
 
