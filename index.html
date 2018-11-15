@@ -6,6 +6,7 @@
     <title>CLEVELAND POKEMON GYM</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap File -->
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -58,78 +59,7 @@
                 </div>
             </div>
     </div>
+    <script src="./assets/javascript/game.js"></script>
 </body>
 
 </html>
-
-<script>
-
-    $(document).ready(function () {
-        //Essential gameplay:
-restartgame();
-playgame();
-
-
-
-        //Functions to be used:
-
-        function restartgame() {
-            $(".fighter_pic").css("visibility: hidden");
-        };
-
-        function playgame() {
-            $("#playbutton").on("click", function () {
-                (".avatar_pic").css("visibility: hidden");
-            });
-        };
-
-
-
-
-        //Variables to be used:
-        var bulba = {
-            health_points: "",
-            attack_power: "",
-            counter_attack: "",
-            base_attack: "",
-            attacker: "",
-            defender: "",
-        };
-
-        var char = {
-            health_points: "",
-            attack_power: "",
-            counter_attack: "",
-            base_attack: "",
-            attacker: "",
-            defender: "",
-        };
-
-        var dratini = {
-            health_points: "",
-            attack_power: "",
-            counter_attack: "",
-            base_attack: "",
-            attacker: "",
-            defender: "",
-        };
-
-        var vapo = {
-            health_points: "",
-            attack_power: "",
-            counter_attack: "",
-            base_attack: "",
-            attacker: "",
-            defender: "",
-        };
-
-        var bulbaImg = $("bulba");
-        var charImg = $("char");
-        var dratiniImg = $("dratini");
-        var vapoImg = $("vapo");
-        var enemy;
-        var fighter;
-        var attackBtn = $("attackButton")
-
-    });
-</script>

@@ -1,0 +1,11 @@
+.fighter_pic{
+    visibility: hidden;
+}
+
+.avatar_pic{
+    visibility: visible;
+}
+
+#attackButton{
+    visibility: hidden;
+}
