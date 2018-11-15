@@ -12,8 +12,7 @@ playGame();
 
         //As the name implies, this is to restart the game once game has been won (currently under development)
     function restartgame() {
-        $(".fighter_pic").css("visibility: hidden;");
-    };
+        $(".fighter_pic").css("visibility: hidden;")};
 
 
         //This function is to initiate gameplay.
@@ -21,12 +20,13 @@ playGame();
         $("#playbutton").click(function () {
             $(".avatar_pic").css("visibility: visible;");
         });
+        
     //When the user clicks on the first image, that'll be the user's avatar ("attacker").
     //When the user clicks on the second image, that'll be the first defender ("defender").
     //If the character has been selected, hide it in the avatar area.
     //If the character has been selected, make it visible in the fighting area with the appropriate colored border.
-        $("#bulba").click(function(bulba, char, dratini, vapo){
-            if((attacker === "" && defender === 0)){
+        $("#bulba").click(function(){
+            if((attacker === "" && defender === "")){
                 attacker = bulba;
                 $("#bulba .avatar_pic").css("visibility: hidden;");
                 $("#bulba .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: green");
@@ -39,7 +39,7 @@ playGame();
             } 
         });
 
-        $("#char").click(function(bulba, char, dratini, vapo){
+        $("#char").click(function(){
             if((attacker === 0 && defender === 0)){
                 attacker = char;
                 $("#char .avatar_pic").css("visibility: hidden;");
@@ -52,7 +52,7 @@ playGame();
             }  
         });
 
-        $("#dratini").click(function(bulba, char, dratini, vapo){
+        $("#dratini").click(function(){
             if((attacker === 0 && defender === 0)){
                 attacker = dratini;
                 $("#dratini .avatar_pic").css("visibility: hidden;");
@@ -65,7 +65,7 @@ playGame();
             }  
         });
 
-        $("#vapo").click(function(bulba, char, dratini, vapo){
+        $("#vapo").click(function(){
             if((attacker === 0 && defender === 0)){
                 attacker = vapo;
                 $("#vapo .avatar_pic").css("visibility: hidden;");
@@ -83,12 +83,12 @@ playGame();
 
     };
 
-    function attackLoop(){
-        //Attack button behavior:
-        $("#attackButton").on(click (function() {
+    // function attackLoop(){
+    //     //Attack button behavior:
+    //     $("#attackButton").on(click (function() {
 
-        })
-    }
+    //     });
+    // }
  
 
     function statReset(){
@@ -108,8 +108,6 @@ playGame();
         attack_power: "",
         counter_attack: 27,
         base_attack: 23,
-        attacker: 0,
-        defender: 0,
     };
 
     var char = {
@@ -117,8 +115,6 @@ playGame();
         attack_power: "",
         counter_attack: 31,
         base_attack: 26,
-        attacker: 0,
-        defender: 0,
     };
 
     var dratini = {
@@ -126,8 +122,6 @@ playGame();
         attack_power: "",
         counter_attack: 25,
         base_attack: 29,
-        attacker: 0,
-        defender: 0,
     };
 
     var vapo = {
@@ -135,8 +129,6 @@ playGame();
         attack_power: "",
         counter_attack: 30,
         base_attack: 25,
-        attacker: 0,
-        defender: 0,
     };
 
     var bulbaImg = $("bulba");
@@ -145,9 +137,10 @@ playGame();
     var vapoImg = $("vapo");
     var defender = "";
     var attacker = "";
-    var attackBtn = $("attackButton")
+    var attackBtn = $("attackButton");
 
-});
+})
+
 
 
 
@@ -213,4 +206,4 @@ playGame();
 // Reminder: Submission on BCS
 
 
-// Please submit both the deployed Github.io link to your homework AND the link to the Github Repository!
+// Please submit both the deployed Github.io link to your homework AND the link to the Github Repository
