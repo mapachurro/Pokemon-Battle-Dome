@@ -1,5 +1,5 @@
 .fighter_pic{
-    visibility: hidden;
+    visibility: visible;
 }
 
 .avatar_pic{
@@ -9,3 +9,28 @@
 #attackButton{
     visibility: hidden;
 }
+
+.avatar_pic {
+    width: 250px;
+    margin: 10px;
+}
+
+.fighter_pic {
+    width: 250px;
+    margin: 10px;
+}
+
+.fighter_pic h3 {
+    position: absolute;
+    bottom: 20px;
+    width: 250px;
+    padding: 5px;
+    margin-bottom: 0;
+    font-weight: 300;
+    line-height: 30px;
+    color: #ffffff;
+    text-align: center;
+    background: #4aaaa5;
+    border-bottom: 0;
+  }
+  

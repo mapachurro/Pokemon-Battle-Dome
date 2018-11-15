@@ -26,13 +26,14 @@ playGame();
     //If the character has been selected, hide it in the avatar area.
     //If the character has been selected, make it visible in the fighting area with the appropriate colored border.
         $("#bulba").click(function(bulba, char, dratini, vapo){
-            if((attacker === 0 && defender === 0)){
-                (this).attacker = 1;
+            if((attacker === "" && defender === 0)){
+                attacker = bulba;
                 $("#bulba .avatar_pic").css("visibility: hidden;");
                 $("#bulba .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: green");
+
             }
             else{
-                (this).defender = 1;
+                defender = bulba;
                 $("#bulba .avatar_pic").css("visibility: hidden;");
                 $("#bulba .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: red");
             } 
@@ -40,12 +41,12 @@ playGame();
 
         $("#char").click(function(bulba, char, dratini, vapo){
             if((attacker === 0 && defender === 0)){
-                (this).attacker = 1;
+                attacker = char;
                 $("#char .avatar_pic").css("visibility: hidden;");
                 $("#char .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: green");
             }
             else{
-                (this).defender = 1;
+                defender = char;
                 $("#char .avatar_pic").css("visibility: hidden;");
                 $("#char .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: red");
             }  
@@ -53,12 +54,12 @@ playGame();
 
         $("#dratini").click(function(bulba, char, dratini, vapo){
             if((attacker === 0 && defender === 0)){
-                (this).attacker = 1;
+                attacker = dratini;
                 $("#dratini .avatar_pic").css("visibility: hidden;");
                 $("#dratini .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: green");
             }
             else{
-                (this).defender = 1;
+                defender = dratini;
                 $("#dratini .avatar_pic").css("visibility: hidden;");
                 $("#dratini .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: red");
             }  
@@ -66,12 +67,12 @@ playGame();
 
         $("#vapo").click(function(bulba, char, dratini, vapo){
             if((attacker === 0 && defender === 0)){
-                (this).attacker = 1;
+                attacker = vapo;
                 $("#vapo .avatar_pic").css("visibility: hidden;");
                 $("#vapo .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: green");
             }
             else{
-                (this).defender = 1;
+                defender = vapo;
                 $("#vapo .avatar_pic").css("visibility: hidden;");
                 $("#vapo .fighter_pic").css("visibility: visible; border-style: solid; border-width: 3px; border-color: red");
             }
@@ -84,10 +85,20 @@ playGame();
 
     function attackLoop(){
         //Attack button behavior:
+        $("#attackButton").on(click (function() {
 
-
+        })
     }
  
+
+    function statReset(){
+        //This keeps the 
+        $(".fighter_pic #bulba h3").append("HP: " + bulba.health_points);
+        $(".fighter_pic #char h3").append("HP: " + char.health_points);
+        $(".fighter_pic #dratini h3").append("HP: " + dratini.health_points);
+        $(".fighter_pic #vapo h3").append("HP: " + vapo.health_points);
+
+    }
 
 
 
@@ -132,8 +143,8 @@ playGame();
     var charImg = $("char");
     var dratiniImg = $("dratini");
     var vapoImg = $("vapo");
-    var defender = 0;
-    var attacker = 0;
+    var defender = "";
+    var attacker = "";
     var attackBtn = $("attackButton")
 
 });
@@ -149,7 +160,8 @@ playGame();
 // SMASH THAT EFFIN BUTTON The player will now be able to click the attack button.
 
 
-// Whenever the player clicks attack, their character damages the defender. The opponent will lose HP (health points). These points are displayed at the bottom of the defender's picture. 
+// Whenever the player clicks attack, their character damages the defender. 
+//The opponent will lose HP (health points). These points are displayed at the bottom of the defender's picture. 
 // The opponent character will instantly counter the attack. When that happens, the player's character will lose some of their HP. These points are shown at the bottom of the player character's picture.
 
 
