@@ -1,17 +1,47 @@
 $(document).ready(function () {
 
+    //Variables to be used:
+    var Bulba = {
+        healthPoints: 145,
+        attackPower: "",
+        counterAttack: 27,
+        baseAttack: 23,
+    };
+    console.log(Bulba.healthPoints);
 
-    //Essential gameplay:
+    var Char = {
+        healthPoints: 136,
+        attack_power: "",
+        counter_attack: 31,
+        base_attack: 26,
+    };
 
-    restartgame();
-    playGame();
+    var Dratini = {
+        healthPoints: 159,
+        attack_power: "",
+        counter_attack: 25,
+        base_attack: 29,
+    };
+
+    var Vapo = {
+        healthPoints: 151,
+        attack_power: "",
+        counter_attack: 30,
+        base_attack: 25,
+    };
+
+    var defender;
+    var attacker;
+    var attackBtn = $("attackButton");
+
 
 
 
     //Functions to be used:
 
-    //As the name implies, this is to restart the game once game has been won (currently under development)
+
     function restartgame() {
+    //As the name implies, this is to restart the game once game has been won (currently under development)
         $(".fighter_pic").css("visibility: hidden;")
     };
 
@@ -26,64 +56,66 @@ $(document).ready(function () {
         //When the user clicks on the second image, that'll be the first defender ("defender").
         //If the character has been selected, hide it in the avatar area.
         //If the character has been selected, make it visible in the fighting area with the appropriate colored border.
-        $('.avatar_pic, #bulba').click(function () {
+        $('#bulba_ava').click(function () {
             if ((attacker === "") && (defender === "")) {
                 attacker = bulba;
-                $(".avatar_pic, #bulba").css({ "visibility": "hidden" });
-                $(".fighter_pic, #bulba").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
+                $("#bulba_ava").css({ "visibility": "hidden" });
+                $("#bulba_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
             }
-            else if ((attacker === "") && (defender === "") && (attacker !== bulba)){
+            else if ((defender === "") && (attacker !== bulba)){
                 defender = bulba;
-                $(".avatar_pic, #bulba").css({ "visibility": "hidden" });
-                $(".fighter_pic, #bulba").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "red" });
+                $("#bulba_ava").css({ "visibility": "hidden" });
+                $("#bulba_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "red" });
             }
         });
         console.log(attacker);
         console.log(defender);
-        $(".avatar_pic, #char").click(function () {
+        $("#char_ava").click(function () {
             if ((attacker === "") && (defender === "")) {
                 attacker = char;
-                $(".avatar_pic, #char").css({ "visibility": "hidden" });
-                $(".fighter_pic, #char").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
+                $("#char_ava").css({ "visibility": "hidden" });
+                $("#char_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
             }
-            else {
+            else if ((defender === "") && (attacker !== char)){
                 defender = char;
-                $(".avatar_pic, #char").css({ "visibility": "hidden" });
-                $(".fighter_pic, #char").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "red" });
+                $("#char_ava").css({ "visibility": "hidden" });
+                $("#char_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "red" });
             }
         });
         console.log(attacker);
         console.log(defender);
-        $(".avatar_pic, #dratini").click(function () {
+        $("#dratini_ava").click(function () {
             if ((attacker === "") && (defender === "")) {
                 attacker = dratini;
-                $(".avatar_pic, #dratini").css({ "visibility": "hidden" });
-                $(".fighter_pic, #dratini").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
+                $("#dratini_ava").css({ "visibility": "hidden" });
+                $("#dratini_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
             }
-            else {
+            else if ((defender === "") && (attacker !== dratini)) {
                 defender = dratini;
-                $(".avatar_pic, #dratini").css({ "visibility": "hidden" });
-                $(".fighter_pic, #dratini").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "red" });
+                $("#dratini_ava").css({ "visibility": "hidden" });
+                $("#dratini_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "red" });
             }
         });
         console.log(attacker);
         console.log(defender);
-        $(".avatar_pic, #vapo").click(function () {
+        $("#vapo_ava").click(function () {
             if ((attacker === "") && (defender === "")) {
                 attacker = vapo;
-                $(".avatar_pic, #vapo").css({ "visibility": "hidden" });
-                $(".fighter_pic, #vapo").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
+                $("#vapo_ava").css({ "visibility": "hidden" });
+                $("#vapo_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
             }
-            else {
+            else if ((defender === "") && (attacker !== vapo)) {
                 defender = vapo;
-                $(".avatar_pic, #vapo").css({ "visibility": "hidden" });
-                $(".fighter_pic, #vapo").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "red" });
+                attacker = vapo;
+                $("#vapo_ava").css({ "visibility": "hidden" });
+                $("#vapo_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "red" });
             }
 
             //Up till now the attack button has been hidden. Make it visible.
             $("#attackButton").css({ "visibility": "visible" });
             //Show them stats
-            statReset();
+
+            
         });
         console.log(attacker);
         console.log(defender);
@@ -98,62 +130,33 @@ $(document).ready(function () {
 
             }
         })
-        )}
+    )}
 
     function statReset() {
         //This keeps the 
-        $("#bulbaHP").text("HP: " + bulba.health_points);
-        $("#charHP").text("HP: " + char.health_points);
-        $("#dratiniHP").text("HP: " + dratini.health_points);
-        $("#vapoHP").text("HP: " + vapo.health_points);
-        console.log(bulba.health_points);
+        $("#bulbaHP").text("HP: " + Bulba.healthPoints);
+        $("#charHP").text("HP: " + Char.healthPoints);
+        $("#dratiniHP").text("HP: " + dratini.healthPoints);
+        $("#vapoHP").text("HP: " + vapo.healthPoints);
+
 
     }
+    
 
 
 
-    //Variables to be used:
-    var bulba = {
-        health_points: 145,
-        attack_power: "",
-        counter_attack: 27,
-        base_attack: 23,
-    };
+    //Essential gameplay:
 
-    var char = {
-        health_points: 136,
-        attack_power: "",
-        counter_attack: 31,
-        base_attack: 26,
-    };
+    restartgame();
+    playGame();
+    statReset();
 
-    var dratini = {
-        health_points: 159,
-        attack_power: "",
-        counter_attack: 25,
-        base_attack: 29,
-    };
+ 
 
-    var vapo = {
-        health_points: 151,
-        attack_power: "",
-        counter_attack: 30,
-        base_attack: 25,
-    };
 
-    var bulbaImg = $("bulba");
-    var charImg = $("char");
-    var dratiniImg = $("dratini");
-    var vapoImg = $("vapo");
-    var defender = "";
-    var attacker = "";
-    var attackBtn = $("attackButton");
+
 
 })
-
-
-
-
 // DONE When the game starts, the player will choose a character by clicking on the fighter's picture. 
 // OK COOL SOUNDS GOOD The player will fight as that character for the rest of the game.
 // AIGHT GOT THAT The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
