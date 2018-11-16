@@ -30,8 +30,8 @@ $(document).ready(function () {
         base_attack: 25,
     };
 
-    var defender;
-    var attacker;
+    var defender = "";
+    var attacker = "";
     var attackBtn = $("attackButton");
 
 
@@ -56,14 +56,14 @@ $(document).ready(function () {
         //When the user clicks on the second image, that'll be the first defender ("defender").
         //If the character has been selected, hide it in the avatar area.
         //If the character has been selected, make it visible in the fighting area with the appropriate colored border.
-        $('#bulba_ava').click(function () {
+        $("#bulba_ava").click(function () {
             if ((attacker === "") && (defender === "")) {
-                attacker = bulba;
+                attacker = Bulba;
                 $("#bulba_ava").css({ "visibility": "hidden" });
                 $("#bulba_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
             }
-            else if ((defender === "") && (attacker !== bulba)){
-                defender = bulba;
+            else if ((defender === "") && (attacker !== Bulba)){
+                defender = Bulba;
                 $("#bulba_ava").css({ "visibility": "hidden" });
                 $("#bulba_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "red" });
             }
@@ -72,12 +72,12 @@ $(document).ready(function () {
         console.log(defender);
         $("#char_ava").click(function () {
             if ((attacker === "") && (defender === "")) {
-                attacker = char;
+                attacker = Char;
                 $("#char_ava").css({ "visibility": "hidden" });
                 $("#char_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
             }
-            else if ((defender === "") && (attacker !== char)){
-                defender = char;
+            else if ((defender === "") && (attacker !== Char)){
+                defender = Char;
                 $("#char_ava").css({ "visibility": "hidden" });
                 $("#char_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "red" });
             }
@@ -86,12 +86,12 @@ $(document).ready(function () {
         console.log(defender);
         $("#dratini_ava").click(function () {
             if ((attacker === "") && (defender === "")) {
-                attacker = dratini;
+                attacker = Dratini;
                 $("#dratini_ava").css({ "visibility": "hidden" });
                 $("#dratini_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
             }
-            else if ((defender === "") && (attacker !== dratini)) {
-                defender = dratini;
+            else if ((defender === "") && (attacker !== Dratini)) {
+                defender = Dratini;
                 $("#dratini_ava").css({ "visibility": "hidden" });
                 $("#dratini_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "red" });
             }
@@ -104,7 +104,7 @@ $(document).ready(function () {
                 $("#vapo_ava").css({ "visibility": "hidden" });
                 $("#vapo_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
             }
-            else if ((defender === "") && (attacker !== vapo)) {
+            else if ((defender === "") && (attacker !== Vapo)) {
                 defender = vapo;
                 attacker = vapo;
                 $("#vapo_ava").css({ "visibility": "hidden" });
@@ -136,8 +136,9 @@ $(document).ready(function () {
         //This keeps the 
         $("#bulbaHP").text("HP: " + Bulba.healthPoints);
         $("#charHP").text("HP: " + Char.healthPoints);
-        $("#dratiniHP").text("HP: " + dratini.healthPoints);
-        $("#vapoHP").text("HP: " + vapo.healthPoints);
+        $("#dratiniHP").text("HP: " + Dratini.healthPoints);
+        $("#vapoHP").text("HP: " + Vapo.healthPoints);
+        console.log(Vapo.healthPoints);
 
 
     }
