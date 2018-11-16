@@ -35,7 +35,7 @@ body, html {
     margin: 10px;
 }
 
-.fighter_pic h3 {
+#bulbaHP, #charHP, #dratiniHP, #vapoHP {
     position: absolute;
     bottom: 20px;
     width: 250px;
