@@ -2,32 +2,36 @@ $(document).ready(function () {
 
     //Variables to be used:
     var Bulba = {
+        name: "Bulbasaur",
         healthPoints: 145,
-        attackPower: "",
-        counterAttack: 27,
-        baseAttack: 23,
+        attack_Power: "",
+        counter_attack: 27,
+        base_attack: 12,
     };
     console.log(Bulba.healthPoints);
 
     var Char = {
+        name: "Charmander",
         healthPoints: 136,
         attack_power: "",
         counter_attack: 31,
-        base_attack: 26,
+        base_attack: 10,
     };
 
     var Dratini = {
+        name: "Dratini",
         healthPoints: 159,
         attack_power: "",
         counter_attack: 25,
-        base_attack: 29,
+        base_attack: 13,
     };
 
     var Vapo = {
+        name: "Vaporeon",
         healthPoints: 151,
         attack_power: "",
         counter_attack: 30,
-        base_attack: 25,
+        base_attack: 11,
     };
 
     var defender = "";
@@ -41,6 +45,8 @@ $(document).ready(function () {
 
 
     //Functions to be used:
+
+    //Attack function. Ideally this can be used in both directions.
     function attack(HP, attack) {
         resultHP = (HP - attack)
     }
@@ -144,6 +150,7 @@ $(document).ready(function () {
                 });
             }
         });
+
         console.log(attacker);
         console.log(defender);
         $("#dratini_ava").click(function () {
@@ -151,12 +158,7 @@ $(document).ready(function () {
                 attacker = Dratini;
                 $("#dratini_ava").css({ "visibility": "hidden" });
                 $("#dratini_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
-                $("#dratiniHP").css({
-                    "visibility": "visible",
-                    "position": "absolute",
-                    "bottom": "20px",
-                    "width": "250px",
-                    "padding": "5px",
+                $("#dratiniHP").css({"visibility": "visible", "position": "absolute", "bottom": "20px", "width": "250px", "padding": "5px",
                     "margin-bottom": "0",
                     "font-weight": "300",
                     "line-height": "30px",
@@ -166,6 +168,7 @@ $(document).ready(function () {
                     "border-bottom": "0"
                 });
             }
+        
             else if ((defender === "") && (attacker !== Dratini)) {
                 defender = Dratini;
                 $("#dratini_ava").css({ "visibility": "hidden" });
@@ -190,7 +193,7 @@ $(document).ready(function () {
         console.log(defender);
         $("#vapo_ava").click(function () {
             if ((attacker === "") && (defender === "")) {
-                attacker = vapo;
+                attacker = Vapo;
                 $("#vapo_ava").css({ "visibility": "hidden" });
                 $("#vapo_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "green" });
                 $("#vapoHP").css({
@@ -209,11 +212,10 @@ $(document).ready(function () {
                 });
             }
             else if ((defender === "") && (attacker !== Vapo)) {
-                defender = vapo;
-                attacker = vapo;
+                defender = Vapo;
                 $("#vapo_ava").css({ "visibility": "hidden" });
                 $("#vapo_fi").css({ "visibility": "visible", "border-style": "solid", "border-width": "3px", "border-color": "red" });
-                $("#vapo HP").css({
+                $("#vapoHP").css({
                     "visibility": "visible",
                     "position": "absolute",
                     "bottom": "20px",
@@ -243,34 +245,57 @@ $(document).ready(function () {
 
     function attackLoop() {
         //Attack button behavior:
-        $("#attackButton").on("click"(function () {
+        $("#attackButton").on("click", function() {
             //start counting attack rounds for attack power calculation
             count++;
+            
+            //Also, define some variables within the attack function that we need:
+            var attackerBase = (attacker.base_attack);
+            var defenseHP = (defender.healthPoints);
+            var attackHP = (attacker.healthPoints);
+            var defenseAttack = (defender.counter_attack); 
+            var attackOver = false;
+            var defenseOver = false;
+
             //then on each successive click, the attacker's base attack is multiplied by that number (of clicks).
-            var attackerPower = ((attacker.base_attack) * count);
+            var attackerPower = (attackerBase * count);
+            
             //Make sure we have both an attacker and a defender
             if ((attacker !== "") && (defender !== "")) {
-                //Give the attacker first attack. The behavior is that we attack base attack
-                for (var HP = defender.healthPoints; HP > 0;) (function (HP) {
-                    $("#attackbutton").onclick = attack(HP, attackerPower);
-                })
+                
+                console.log(attacker.name);
+                console.log(defender.name);
+                //Give the attacker first attack. The behavior is that we attack with base_attack
+                while (defenseHP > 0 && attackHP > 0 && (attackOver === false)){
+                    attack(defenseHP, attackerPower);
+                    defenseHP = resultHP;
+                    attackOver = true;
+                    console.log("End of attack round: " + defenseHP);
+                };
                 statReset();
-                //then the defender counterattacks
-                for (var HP = attacker.healthPoints; HP > 0;) (function (HP) {
-                    $("#attackbutton").onclick = attack(HP, defender.counter_attack);
-                })
+                
+                //then the defender counterattacks. 
+                //NOTE Currently we have an infinite loop here.
+                while (defenseHP > 0 && attackHP > 0 && (defenseOver === false)){
+                    attack(attackHP, defenseAttack);
+                    attackHP = resultHP;
+                    defenseOver = true;
+                    console.log("End of defense round: " + resultHP);
+                };
                 statReset();
-                    //When the defender's HP is depleted, make it disappear and clear out the "defender" category   
-                    if (attacker.healthPoints < 0) {
-                        alert("Oh no! Your pokemon fainted! Try again :-( ");
-                        //Run reset loop, or just refresh the page
-                        defender = "";
-                        attacker = "";
-                        statReset();
-                        restartgame();
-                        playGame();
+                
+                //When the defender's HP is depleted, make it disappear and clear out the "defender" category   
+                if (attackHP < 0) {
+                    alert("Oh no! Your pokemon fainted! Try again :-( ");
+                    //Run reset loop, or just refresh the page
+                    defender = "";
+                    attacker = "";
+                    statReset();
+                    restartgame();
+                    playGame();
                     }
-                    if (defender.healthPoints < 0) {
+                    
+                    if (defenseHP < 0) {
                         //If the "defeated enemies" counter is 3, then alert the player they've won and offer them a reset button
                         if (defeated > 2) {
                             alert("Congratulations! You've won! Ready to play again?");
@@ -292,11 +317,11 @@ $(document).ready(function () {
 
             }
         })
-        )
     }
 
     function statReset() {
         //This keeps the pokemon's stats up to date on the page. Allegedly.
+        //This part doesn't work. I'm not sure how to make it update in real time to the correct <div>.
         $("#bulbaHP").text("HP: " + Bulba.healthPoints);
         $("#charHP").text("HP: " + Char.healthPoints);
         $("#dratiniHP").text("HP: " + Dratini.healthPoints);
@@ -313,6 +338,7 @@ $(document).ready(function () {
     statReset();
     restartgame();
     playGame();
+    attackLoop();   
 
 
 
