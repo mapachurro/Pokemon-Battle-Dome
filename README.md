@@ -1,4 +1,4 @@
-# unit-4-game
+# Pokemon Battle Dome
 I built this game for an assignment at the CWRU Bootcamp, which was intended to teach us to use jquery and javascript.
 For purposes of getting the design out of the way quickly, I built the page in bootstrap, which later had functionality consequences 
 with jquery and what I wanted to happen with the UX.
