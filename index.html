@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>CLEVELAND POKEMON GYM</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap File -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="./assets/javascript/game.js"></script>
+    <meta charset="UTF-8">
+    <title>CLEVELAND POKEMON GYM</title>
+    <!-- Bootstrap File -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Javascript -->
+    <script src="./assets/javascript/gamejan.js"></script>
 
 </head>
 
@@ -28,20 +28,20 @@
                     as many times as you need to defeat your opponent. When that opponent is defeated, choose your next
                     opponent.
                 </p>
-                <a href="#" id="playbutton" class="btn btn-primary">PLAY</a>
+                <button type="button" id="playButton" class="btn btn-outline-primary">PLAY</button>
                 <br>
                 <br>
                 <div id="avatarimages" class="row">
                     <div class="avatar_pic">
                         <img id="bulba_ava" src="./assets/images/bulbasaur.jpg" width="250">
                     </div>
-                        <div class="avatar_pic">
+                    <div class="avatar_pic">
                         <img id="char_ava" src="./assets/images/charmander.jpg" width="250">
                     </div>
-                        <div class="avatar_pic">
+                    <div class="avatar_pic">
                         <img id="dratini_ava" src="./assets/images/dratini.jpg" width="250">
                     </div>
-                        <div class="avatar_pic">
+                    <div class="avatar_pic">
                         <img id="vapo_ava" src="./assets/images/vaporeon.jpg" width="250">
                     </div>
                 </div>
@@ -50,37 +50,54 @@
         </div>
 
         <div class="card">
-                <div class="card-header">
-                    <h1>BATTLEZONE</h1>
+            <div class="card-header">
+                <h1>BATTLEZONE</h1>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3 id="attackerHP"></h3>
+                    </div>
+                    <div class="col-md-3">
+                        <h3 id="wincounter"></h3>
+                    </div>
+                    <div class="col-md-3">
+                        <h3 id="losscounter"></h3>
+                    </div>
+                    <div class="col-md-3">
+                        <h3 id="defenderHP"></h3>
+                    </div>
                 </div>
-                <div class="card-body">
-                    </p>
-                    <a href="#" id="attackButton" class="btn btn-primary">ATTACK</a>
-                    <br>
-                    <br>
-                    <div id="fighterimages" class="row">
+                <button type="button" id="attackButton" class="btn btn-outline-primary">ATTACK</button>
+                <br>
+                <br>
+                <div id="fighterimages" class="row">
                     <div class="fighter_pic">
                         <img id="bulba_fi" src="./assets/images/bulbasaur.jpg" width="250">
-                        <h3 id="bulbaHP">asdfadfasdf</h3>
+                        <div class="caption">Test</div>
+
                     </div>
                     <div class="fighter_pic">
                         <img id="char_fi" src="./assets/images/charmander.jpg" width="250">
-                        <h3 id="charHP">146</h3>
+                        <div class="caption">Test</div>
+
                     </div>
-                    <div  class="fighter_pic">
+                    <div class="fighter_pic">
                         <img id="dratini_fi" src="./assets/images/dratini.jpg" width="250">
-                        <h3 id="dratiniHP">asdfasdf</h3>
+                        <div class="caption">Test</div>
+
                     </div>
-                    <div  class="fighter_pic">
+                    <div class="fighter_pic">
                         <img id="vapo_fi" src="./assets/images/vaporeon.jpg" width="250">
-                        <h3 id="vapoHP">asdfasf</h3>
+                        <div class="caption">Test</div>
+
                     </div>
-                    </div>
-    
                 </div>
+
             </div>
+        </div>
     </div>
-    
+
 </body>
 
 </html>

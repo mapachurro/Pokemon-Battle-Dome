@@ -15,27 +15,20 @@ body, html {
 
 .fighter_pic{
     visibility: hidden;
+    width: 250px;
+    margin: 10px;
 }
 
 .avatar_pic{
-    visibility: visible;
+    width: 250px;
+    margin: 10px;
 }
 
 #attackButton{
     visibility: hidden;
 }
-
-.avatar_pic {
-    width: 250px;
-    margin: 10px;
-}
-
-.fighter_pic {
-    width: 250px;
-    margin: 10px;
-}
-
 #bulbaHP, #charHP, #dratiniHP, #vapoHP {
+    visibility: visible;
     position: absolute;
     bottom: 20px;
     width: 250px;
@@ -48,4 +41,3 @@ body, html {
     background: #4aaaa5;
     border-bottom: 0;
   }
-  
